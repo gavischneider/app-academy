@@ -17,10 +17,10 @@ class Room
     end
 
     def full?
-        if @occupants.length() == @capacity
-            return true
-        else
+        if @occupants.length < @capacity
             return false
+        else
+            return true
         end
     end
 
