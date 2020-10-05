@@ -48,4 +48,22 @@ class Code
     end
     count
   end
+
+  def num_near_matches(guess)
+    count = 0
+    (0...guess.length).each do |i|
+      count += 1 if self.pegs.include?(guess[i]) and @pegs[i] != guess[i]
+    end
+    count
+  end
+
+  def ==(guess)
+    (0...guess.length).each do |i|
+      if @pegs[i] != guess[i]  
+        return false
+      end
+    end
+    true
+  end
+
 end
