@@ -40,4 +40,12 @@ class Code
   def length
     @pegs.length
   end
+
+  def num_exact_matches(guess)
+    count = 0
+    (0...guess.length).each do |i|
+      count += 1 if @pegs[i] == guess[i]  
+    end
+    count
+  end
 end
